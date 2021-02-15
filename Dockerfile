@@ -8,6 +8,7 @@ COPY redis.conf /usr/local/etc/redis/redis.conf
 WORKDIR /data
 RUN set -ex; \
     apt-get update; \
+    apt-get install vim -y; \
     apt-get install -y --no-install-recommends ${REDISGRAPH_DEPS};
 COPY --from=rejson ${LD_LIBRARY_PATH}/*.so ${LD_LIBRARY_PATH}/
 # ENV PYTHONPATH /usr/lib/redis/modules/deps/cpython/Lib
