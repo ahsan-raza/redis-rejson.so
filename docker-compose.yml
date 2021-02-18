@@ -1,0 +1,12 @@
+version: "3.0"
+
+services:
+  redis_rejson:
+    container_name: redis_rejson
+    image: ahsanraza/redis-expertflow
+    volumes:
+      - /root/redis:/usr/local/etc/
+    ports:
+      - 6379:6379
+    command: /usr/local/etc/redis.conf
+    restart: always
